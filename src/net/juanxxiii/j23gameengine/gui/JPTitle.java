@@ -10,6 +10,7 @@ import java.util.TimerTask;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import net.juanxxiii.j23gameengine.GameEngine;
+import net.juanxxiii.j23gameengine.util.SoundPlayer;
 
 /**
  *
@@ -56,6 +57,9 @@ public class JPTitle extends javax.swing.JPanel {
             //Obtener la referencia al JFrame padre
             GameEngine topFrame = (GameEngine)SwingUtilities.getWindowAncestor(JPTitle.this);
             topFrame.comenzarJuego(); 
+            //Sonido de comienzo
+            SoundPlayer sonido = new SoundPlayer(getClass().getResource("/assets/intro.wav"));
+            sonido.start(false);
         }
     }
 }
