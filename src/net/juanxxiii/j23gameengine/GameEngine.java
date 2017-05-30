@@ -64,14 +64,14 @@ public class GameEngine extends javax.swing.JFrame {
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null,
                     "Ha ocurrido un error al leer el fichero de configuración", 
-                    "J23 GameEngine", 
+                    "DAAM v1.0", 
                     JOptionPane.ERROR_MESSAGE);
             System.exit(-1);
         } catch (Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(null,
                     "Ha ocurrido un error al iniciar la aplicación", 
-                    "J23 GameEngine", 
+                    "DAAM v1.0", 
                     JOptionPane.ERROR_MESSAGE);
             System.exit(-1);
         }
@@ -187,8 +187,8 @@ public class GameEngine extends javax.swing.JFrame {
 
     private void jmiAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAboutActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(rootPane, "By Fernando Paniagua (2017)", 
-                "J23GameEngine", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(rootPane, "By Ruben, Javi, David, Jose y Sergio (2017)", 
+                "DAAM v1.0", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jmiAboutActionPerformed
 
     private void jmiExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiExitActionPerformed
@@ -199,31 +199,31 @@ public class GameEngine extends javax.swing.JFrame {
     private void jmiStartGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiStartGameActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "Acción no implementada", 
-                "J23GameEngine", JOptionPane.INFORMATION_MESSAGE);
+                "DAAM v1.0", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jmiStartGameActionPerformed
 
     private void jmiLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiLoadActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "Acción no implementada", 
-                "J23GameEngine", JOptionPane.INFORMATION_MESSAGE);
+                "DAAM v1.0", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jmiLoadActionPerformed
 
     private void jmiSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiSaveActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "Acción no implementada", 
-                "J23GameEngine", JOptionPane.INFORMATION_MESSAGE);
+                "DAAM v1.0", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jmiSaveActionPerformed
 
     private void jmiPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiPauseActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "Acción no implementada", 
-                "J23GameEngine", JOptionPane.INFORMATION_MESSAGE);
+                "DAAM v1.0", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jmiPauseActionPerformed
 
     private void jmiStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiStopActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "Acción no implementada", 
-                "J23GameEngine", JOptionPane.INFORMATION_MESSAGE);
+                "DAAM v1.0", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jmiStopActionPerformed
 
     /**
