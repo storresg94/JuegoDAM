@@ -10,12 +10,12 @@ package gameobjects;
  * @author dam
  */
 public class Malo {
-    private int vida;
-    private int resistencia;
-    private int danyo;
-    private int x;
-    private int y;
-    private String sprite;
+    protected int vida;
+    protected int resistencia;
+    protected int danyo;
+    protected int x;
+    protected int y;
+    protected String sprite;
 
     public Malo(int vida, int resistencia, int danyo, int x, int y, String sprite) {
         this.vida = vida;
