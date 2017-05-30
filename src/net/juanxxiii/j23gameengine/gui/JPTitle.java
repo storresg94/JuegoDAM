@@ -18,14 +18,19 @@ import net.juanxxiii.j23gameengine.util.SoundPlayer;
  */
 public class JPTitle extends javax.swing.JPanel {
 
+    private SoundPlayer sonido;
     /**
      * Creates new form JPTitle
      */
     public JPTitle() {
         initComponents();
+        sonido = new SoundPlayer(getClass().getResource("/assets/intro.wav"));
+        sonido.start(false);
+        
         //Espera 3000 ms y lanza la Tarea de cambio de pantalla
         Timer timer = new Timer();
         timer.schedule(new Tarea(), 3000);
+        
     }
     
     /**
@@ -58,7 +63,8 @@ public class JPTitle extends javax.swing.JPanel {
             GameEngine topFrame = (GameEngine)SwingUtilities.getWindowAncestor(JPTitle.this);
             topFrame.comenzarJuego(); 
             //Sonido de comienzo
-            SoundPlayer sonido = new SoundPlayer(getClass().getResource("/assets/intro.wav"));
+            sonido.stop(); 
+            sonido = new SoundPlayer(getClass().getResource("/assets/chunda.wav"));
             sonido.start(false);
         }
     }
