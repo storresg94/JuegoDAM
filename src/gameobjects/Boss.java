@@ -5,13 +5,15 @@
  */
 package gameobjects;
 
+import java.awt.image.BufferedImage;
+
 /**
  *
- * @author dam
+ * @author rgc
  */
 public class Boss extends Malo {
     
-    public Boss(int vida, int resistencia, int danyo, int x, int y, String sprite) {
+    public Boss(int vida, int resistencia, int danyo, int x, int y, BufferedImage sprite) {
         super(vida, resistencia, danyo, x, y, sprite);
     }
     
