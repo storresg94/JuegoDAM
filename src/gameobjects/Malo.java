@@ -5,6 +5,8 @@
  */
 package gameobjects;
 
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author dam
@@ -15,9 +17,9 @@ public class Malo {
     protected int danyo;
     protected int x;
     protected int y;
-    protected String sprite;
+    protected BufferedImage sprite;
 
-    public Malo(int vida, int resistencia, int danyo, int x, int y, String sprite) {
+    public Malo(int vida, int resistencia, int danyo, int x, int y, BufferedImage sprite) {
         this.vida = vida;
         this.resistencia = resistencia;
         this.danyo = danyo;
@@ -66,11 +68,11 @@ public class Malo {
         this.y = y;
     }
 
-    public String getSprite() {
+    public BufferedImage getSprite() {
         return sprite;
     }
 
-    public void setSprite(String sprite) {
+    public void setSprite(BufferedImage sprite) {
         this.sprite = sprite;
     }
     

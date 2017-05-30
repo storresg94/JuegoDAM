@@ -5,6 +5,7 @@
  */
 package net.juanxxiii.j23gameengine.gui;
 
+import gameobjects.Boss;
 import gameobjects.Spaceship;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -14,6 +15,8 @@ import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import net.juanxxiii.j23gameengine.util.SoundPlayer;
 
@@ -24,12 +27,18 @@ import net.juanxxiii.j23gameengine.util.SoundPlayer;
 public class JPGameScreen extends javax.swing.JPanel implements Runnable {
 
     BufferedImage bg;//Imagen de fondo
-    Spaceship nave;
+    Spaceship nave;//Imagen de fondo
+    
+    Boss jefe;
+    
 
     /**
      * Creates new form JPGameScreen
      */
     public JPGameScreen() {
+      
+        
+        
         initComponents();
         //Cargamos los recursos
         loadResources();
@@ -112,6 +121,8 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
         g2d.drawImage(bg, 0, 0, null);
         //Pinta los elementos
         g2d.drawImage(nave.getNave(), nave.getxNave(), nave.getyNave(), null);
+        
+        g2d.drawImage(jefe.getSprite(), jefe.getX(), jefe.getY(), null);
     }
 
     /**
@@ -152,6 +163,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
                 ex.printStackTrace();
             }
         }
+        
     }
     
     /**
@@ -159,6 +171,8 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
      */
     private void loadResources(){
         try {
+            bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/MaloMaloso.png"));      
+            jefe = new Boss(100, 100, 100, 100, 100, bg );
             bg = ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/bg.jpg"));
             nave = new Spaceship();
             new Thread(nave).start();
