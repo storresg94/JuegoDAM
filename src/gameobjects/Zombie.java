@@ -5,20 +5,15 @@
  */
 package gameobjects;
 
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author Nexodar
  */
 public class Zombie extends Malo{
     
-    private int vida=5-10;
-    private int resistencia;
-    private int danyo;
-    private int x;
-    private int y;
-    private String sprite;
-    
-    public Zombie(int vida, int resistencia, int danyo, int x, int y, String sprite) {
+    public Zombie(int vida, int resistencia, int danyo, int x, int y, BufferedImage sprite) {
         super(vida, resistencia, danyo, x, y, sprite);
     }
       public int getVida() {
@@ -39,7 +34,7 @@ public class Zombie extends Malo{
         this.y = 5;
     }
 
-    public void setSprite(String sprite) {
+    public void setSprite(BufferedImage sprite) {
         this.sprite = sprite;
     }
        
