@@ -16,6 +16,5 @@ public class Boss extends Malo {
     public Boss(int vida, int resistencia, int danyo, int x, int y, BufferedImage sprite) {
         super(vida, resistencia, danyo, x, y, sprite);
     }
-    
-    
+       
 }
