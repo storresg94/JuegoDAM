@@ -9,6 +9,11 @@ package gameobjects;
  *
  * @author dam
  */
-public class Boss {
+public class Boss extends Malo {
+    
+    public Boss(int vida, int resistencia, int danyo, int x, int y, String sprite) {
+        super(vida, resistencia, danyo, x, y, sprite);
+    }
+    
     
 }
