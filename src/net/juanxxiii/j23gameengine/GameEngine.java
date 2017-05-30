@@ -20,7 +20,7 @@ import util.PropertiesManager;
  * Contiene un JPanel con CardLayout llamado jpContainer sobre el que 
  * se agregarán los paneles
  * 
- * @author Fernando Paniagua
+ * @author Fernando Paniagua/Profesor
  */
 public class GameEngine extends javax.swing.JFrame {
     public static int screenWidth;
