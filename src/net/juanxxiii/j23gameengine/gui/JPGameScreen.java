@@ -28,7 +28,6 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
 
     BufferedImage bg;//Imagen de fondo
     Spaceship nave;//Imagen de fondo
-    Boss jefazo;//Jefe final
     
     
 
@@ -119,8 +118,6 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
         g2d.drawImage(bg, 0, 0, null);
         //Pinta los elementos
         g2d.drawImage(nave.getNave(), nave.getxNave(), nave.getyNave(), null);
-        
-        g2d.drawImage(jefazo.getSprite(), jefazo.getX(), jefazo.getY(), null);
     }
 
     /**
@@ -172,7 +169,6 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
             bg = ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/bg.jpg"));
             nave = new Spaceship();
             new Thread(nave).start();
-            new Thread((Runnable) jefazo).start();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
