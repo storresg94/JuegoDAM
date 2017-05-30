@@ -171,7 +171,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
      */
     private void loadResources(){
         try {
-            bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/MaloMaloso.jpg"));      
+            bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/MaloMaloso.png"));      
             jefe = new Boss(100, 100, 100, 100, 100, bg );
             bg = ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/bg.jpg"));
             nave = new Spaceship();
