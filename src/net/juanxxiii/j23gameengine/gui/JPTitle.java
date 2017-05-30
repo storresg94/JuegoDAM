@@ -40,10 +40,10 @@ public class JPTitle extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 100));
+        setLayout(new java.awt.BorderLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/logotipo.jpg"))); // NOI18N
-        add(jLabel1);
+        add(jLabel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
 
