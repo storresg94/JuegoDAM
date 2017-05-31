@@ -60,14 +60,4 @@ public class Prota {
         this.danyo = this.danyo + arma;
     }
 
-//    public void restaurarVida() {
-//        int vidaActual;
-//        int vidaMax = 100;
-//        vidaActual = getVida();
-//        if (vidaActual < 100) {
-//            vidaMax - vidaActual;
-//        } else {
-//
-//        }
-//    }
 }
