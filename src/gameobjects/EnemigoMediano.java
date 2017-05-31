@@ -16,6 +16,11 @@ public class EnemigoMediano extends Malo {
     public EnemigoMediano(int vida, int resistencia, int danyo, int x, int y, BufferedImage sprite) {
         super(vida, resistencia, danyo, x, y, sprite);
     }
+
+    @Override
+    public void recibirImpacto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
     
 }
