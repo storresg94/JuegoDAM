@@ -5,6 +5,7 @@
  */
 package gameobjects;
 
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 /**
@@ -28,6 +29,10 @@ public abstract class Malo {
         this.sprite = sprite;
     }
 
+    public void pintar(Graphics2D g2d){
+        g2d.drawImage(sprite, x, y, null);
+    }
+    
     public int getVida() {
         return vida;
     }
