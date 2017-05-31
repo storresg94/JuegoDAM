@@ -5,13 +5,15 @@
  */
 package gameobjects;
 
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author MSI
  */
 public class EnemigoMediano extends Malo {
     
-    public EnemigoMediano(int vida, int resistencia, int danyo, int x, int y, String sprite) {
+    public EnemigoMediano(int vida, int resistencia, int danyo, int x, int y, BufferedImage sprite) {
         super(vida, resistencia, danyo, x, y, sprite);
     }
    
