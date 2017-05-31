@@ -16,32 +16,5 @@ public class Zombie extends Malo{
     public Zombie(int vida, int resistencia, int danyo, int x, int y, BufferedImage sprite) {
         super(vida, resistencia, danyo, x, y, sprite);
     }
-      public int getVida() {
-        return vida;
-    }
-    public void setVida(int Vida){
-        this.vida = 5;
-    }
-    
-     public void setDanyo(int Danyo){
-        this.danyo = 0;
-    }
-     
-      public void setX(int X){
-        this.x = 5;
-    }
-       public void setY(int Y){
-        this.y = 5;
-    }
-
-    public void setSprite(BufferedImage sprite) {
-        this.sprite = sprite;
-    }
-       
-   
-    
- 
-    
-   
     
 }

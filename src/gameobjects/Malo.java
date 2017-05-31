@@ -11,7 +11,7 @@ import java.awt.image.BufferedImage;
  *
  * @author dam
  */
-public class Malo {
+public abstract class Malo {
     protected int vida;
     protected int resistencia;
     protected int danyo;
@@ -76,5 +76,5 @@ public class Malo {
         this.sprite = sprite;
     }
     
-    
+    public abstract void recibirImpacto();
 }
