@@ -122,8 +122,8 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
         //Pinta los elementos
         g2d.drawImage(nave.getNave(), nave.getxNave(), nave.getyNave(), null);
         
-        g2d.drawImage(jefe.getSprite(), jefe.getX(), jefe.getY(), null);
-        g2d.drawImage(mediano.getSprite(), mediano.getX(), mediano.getY(), null);
+        jefe.pintar(g2d);
+        mediano.pintar(g2d);
     }
 
     /**
