@@ -179,6 +179,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
             bg = ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/bg.jpg"));
             nave = new Spaceship();
             new Thread(nave).start();
+            new Thread(jefe).start();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
