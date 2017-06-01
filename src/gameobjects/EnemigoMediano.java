@@ -26,9 +26,13 @@ public class EnemigoMediano extends Malo implements Runnable {
      @Override
     public void run() {
         while (true){
-            x++;
+            if (x>820){
+                x=-300;
+            }else{
+               x++;  
+            }
             try {
-                sleep(15);
+                sleep(10);
             } catch (InterruptedException ex) {
                 //Irrelevante, no hacemos nada
             }
