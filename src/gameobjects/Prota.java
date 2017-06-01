@@ -5,6 +5,13 @@ import java.awt.image.BufferedImage;
 import static java.lang.Thread.sleep;
 
 public class Prota implements Runnable{
+    private static final int STOP=-1;
+    private static final int UP=0;
+    private static final int DOWN=1;
+    private static final int RIGHT=2;
+    private static final int LEFT=3;
+    
+    private int direccion=STOP;
 
     private int vida;
     private int danyo;
@@ -23,6 +30,23 @@ public class Prota implements Runnable{
         g2d.drawImage(sprite, x, y, null);
     }
 
+    public void moveUp(){
+        direccion=UP;
+    }
+    public void moveDown(){
+        direccion=DOWN;
+    }
+    public void moveRight(){
+        direccion=RIGHT;
+    }
+    public void moveLeft(){
+        direccion=LEFT;
+    }
+    
+    public void stop(){
+        direccion=STOP;
+    }
+    
     public int getVida() {
         return vida;
     }
@@ -70,10 +94,19 @@ public class Prota implements Runnable{
     @Override
     public void run() {
         while (true){
-            if (x>820){
-                x=-300;
-            }else{
-               x++;  
+            switch(direccion){
+                case UP:
+                    y--;
+                    break;
+                case DOWN:
+                    y++;
+                    break;
+                case RIGHT:
+                    x++;
+                    break;
+                case LEFT:
+                    x--;
+                    break;
             }
             try {
                 sleep(10);
