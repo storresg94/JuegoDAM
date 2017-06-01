@@ -6,12 +6,13 @@
 package gameobjects;
 
 import java.awt.image.BufferedImage;
+import static java.lang.Thread.sleep;
 
 /**
  *
  * @author MSI
  */
-public class EnemigoMediano extends Malo {
+public class EnemigoMediano extends Malo implements Runnable {
     
     public EnemigoMediano(int vida, int resistencia, int danyo, int x, int y, BufferedImage sprite) {
         super(vida, resistencia, danyo, x, y, sprite);
@@ -20,6 +21,18 @@ public class EnemigoMediano extends Malo {
     @Override
     public void recibirImpacto() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+     @Override
+    public void run() {
+        while (true){
+            x++;
+            try {
+                sleep(15);
+            } catch (InterruptedException ex) {
+                //Irrelevante, no hacemos nada
+            }
+        }
     }
    
     
