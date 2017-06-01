@@ -8,6 +8,7 @@ package net.juanxxiii.j23gameengine.gui;
 import gameobjects.Boss;
 import gameobjects.EnemigoMediano;
 import gameobjects.Spaceship;
+import gameobjects.Zombie;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -28,6 +29,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
     BufferedImage bg;//Imagen de fondo
     Spaceship nave;//Imagen de fondo
     
+    Zombie zombie;
     Boss jefe;
     EnemigoMediano mediano;
     
@@ -124,6 +126,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
         
         jefe.pintar(g2d);
         mediano.pintar(g2d);
+        zombie.pintar(g2d);
     }
 
     /**
@@ -174,6 +177,8 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
         try {
             bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/MaloMaloso.png"));      
             jefe = new Boss(100, 100, 100, 100, 100, bg );
+            bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/Zombie.png"));      
+            zombie = new Zombie(10, 0, 80, 300, 300, bg );
             bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/CaballeroOscuro.png"));      
             mediano = new EnemigoMediano(50, 50, 50, 50, 50, bg );
             bg = ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/bg.jpg"));
@@ -181,6 +186,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
             new Thread(nave).start();
             new Thread(jefe).start();
             new Thread(mediano).start();
+            new Thread(zombie).start();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
