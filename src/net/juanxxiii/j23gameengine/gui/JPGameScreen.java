@@ -6,6 +6,7 @@
 package net.juanxxiii.j23gameengine.gui;
 
 import gameobjects.Boss;
+import gameobjects.EnemigoMediano;
 import gameobjects.Spaceship;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -28,6 +29,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
     Spaceship nave;//Imagen de fondo
     
     Boss jefe;
+    EnemigoMediano mediano;
     
 
     /**
@@ -121,6 +123,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
         g2d.drawImage(nave.getNave(), nave.getxNave(), nave.getyNave(), null);
         
         g2d.drawImage(jefe.getSprite(), jefe.getX(), jefe.getY(), null);
+        g2d.drawImage(mediano.getSprite(), mediano.getX(), mediano.getY(), null);
     }
 
     /**
@@ -171,6 +174,8 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
         try {
             bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/MaloMaloso.png"));      
             jefe = new Boss(100, 100, 100, 100, 100, bg );
+            bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/CaballeroOscuro.png"));      
+            mediano = new EnemigoMediano(50, 50, 50, 50, 50, bg );
             bg = ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/bg.jpg"));
             nave = new Spaceship();
             new Thread(nave).start();
