@@ -25,13 +25,19 @@ public class Boss extends Malo implements Runnable{
 
     @Override
     public void run() {
+        int prueba=0;
         while (true){
-            if (x>820){
-                x=-300;
-            }else{
-               x++;  
+            if (x>550){
+                prueba=1;
             }
-           
+            if(x<5){
+               prueba=0; 
+            }
+            if (prueba==0){
+                x++;
+            }else{
+                x--;
+            }
             try {
                 sleep(10);
             } catch (InterruptedException ex) {
