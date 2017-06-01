@@ -19,6 +19,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
 import javax.imageio.ImageIO;
+import net.juanxxiii.j23gameengine.GameEngine;
 import net.juanxxiii.j23gameengine.util.SoundPlayer;
 
 /**
@@ -74,19 +75,19 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
                 switch (e.getKeyCode()){
                     case 38:
                         //Key up
-                        nave.moveUp();
+                        prota.moveUp();
                         break;
                     case 40:
                         //Key down
-                        nave.moveDown();
+                        prota.moveDown();
                         break;
                     case 39:
                         //Key right
-                        nave.moveRight();
+                        prota.moveRight();
                         break;
                     case 37:
                         //Key left
-                        nave.moveLeft();
+                        prota.moveLeft();
                         break;
                 }
             }
@@ -96,19 +97,19 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
                 switch (e.getKeyCode()){
                     case 38:
                         //Key up
-                        nave.stop();
+                        prota.stop();
                         break;
                     case 40:
                         //Key down
-                        nave.stop();
+                        prota.stop();
                         break;
                     case 39:
                         //Key right
-                        nave.stop();
+                        prota.stop();
                         break;
                     case 37:
                         //Key left
-                        nave.stop();
+                        prota.stop();
                         break;
                 }
             }
@@ -124,8 +125,6 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
         //Pinta el fondo
         g2d.drawImage(bg, 0, 0, null);
         //Pinta los elementos
-        g2d.drawImage(nave.getNave(), nave.getxNave(), nave.getyNave(), null);
-        
         jefe.pintar(g2d);
         mediano.pintar(g2d);
         zombie.pintar(g2d);
@@ -179,17 +178,15 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
     private void loadResources(){
         try {
             bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/doom.gif"));      
-            prota = new Prota(100, 20, 50, 70, bg );
+            prota = new Prota(100, 20, 350, 10, bg );
             bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/MaloMaloso.png"));      
             jefe = new Boss(100, 100, 100, 100, 100, bg );
             bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/Zombie.png"));      
             zombie = new Zombie(10, 0, 80, 300, 300, bg );
             bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/CaballeroOscuro.png"));      
             mediano = new EnemigoMediano(50, 50, 50, 50, 50, bg );
-            bg = ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/bg.jpg"));
-            nave = new Spaceship();
+            bg = ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/bg.png"));
             new Thread(prota).start();
-            new Thread(nave).start();
             new Thread(jefe).start();
             new Thread(mediano).start();
             new Thread(zombie).start();
