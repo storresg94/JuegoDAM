@@ -180,6 +180,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
             nave = new Spaceship();
             new Thread(nave).start();
             new Thread(jefe).start();
+            new Thread(mediano).start();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
