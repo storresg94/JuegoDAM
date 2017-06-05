@@ -12,7 +12,7 @@ import static java.lang.Thread.sleep;
  *
  * @author rgc
  */
-public class Boss extends Malo implements Runnable{
+public class Boss extends Malo implements Runnable, MaloI{
     
     public Boss(int vida, int resistencia, int danyo, int x, int y, BufferedImage sprite) {
         super(vida, resistencia, danyo, x, y, sprite);
