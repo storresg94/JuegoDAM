@@ -9,6 +9,8 @@ import java.awt.CardLayout;
 import java.awt.Cursor;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import net.juanxxiii.j23gameengine.gui.*;
@@ -22,7 +24,7 @@ import util.PropertiesManager;
  * 
  * @author Fernando Paniagua/Profesor
  */
-public class GameEngine extends javax.swing.JFrame {
+public class GameEngine extends javax.swing.JFrame implements MouseListener {
     public static int screenWidth;
     public static int screenHeight;
     public static int screenX;
@@ -247,4 +249,29 @@ public class GameEngine extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiStop;
     private javax.swing.JPanel jpContainer;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        //
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        //
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        //
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        //
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        //
+    }
 }
