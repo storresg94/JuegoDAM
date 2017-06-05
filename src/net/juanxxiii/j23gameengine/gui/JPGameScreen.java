@@ -16,6 +16,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
@@ -27,7 +29,7 @@ import net.juanxxiii.j23gameengine.util.SoundPlayer;
  *
  * @author Profesor
  */
-public class JPGameScreen extends javax.swing.JPanel implements Runnable {
+public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseListener {
 
     BufferedImage bg;//Imagen de fondo
     Spaceship nave;//Imagen de fondo
@@ -200,6 +202,32 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        Graphics2D g2d = (Graphics2D) g;
+        mediano.pintar(g2d);
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        //
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        //
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        //
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        //
     }
 
 
