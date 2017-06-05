@@ -21,6 +21,8 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import net.juanxxiii.j23gameengine.GameEngine;
 import net.juanxxiii.j23gameengine.util.SoundPlayer;
@@ -47,7 +49,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseL
      */
     public JPGameScreen() {
       
-        
+        this.addMouseListener(this);
         
         initComponents();
         //Cargamos los recursos
@@ -135,9 +137,12 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseL
         g2d.drawImage(bg, 0, 0, null);
         //Pinta los elementos
         jefe.pintar(g2d);
-        mediano.pintar(g2d);
+        //mediano.pintar(g2d);
         zombie.pintar(g2d);
         prota.pintar(g2d);
+        if (x==true){
+            mediano.pintar(g2d);
+        }
     }
 
     /**
@@ -206,10 +211,10 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseL
         }
     }
 
+    boolean x = false;
     @Override
     public void mouseClicked(MouseEvent e) {
-        mediano.pintar(g2d);
-        
+        x = true;
     }
 
     @Override
