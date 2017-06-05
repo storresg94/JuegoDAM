@@ -5,6 +5,8 @@
  */
 package gameobjects;
 
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author dam
@@ -12,11 +14,15 @@ package gameobjects;
 public class Mapa {
     private int x;
     private int y;
+    protected BufferedImage sprite;
 
-    public Mapa(int x, int y) {
+    public Mapa(int x, int y, BufferedImage sprite) {
         this.x = x;
         this.y = y;
+        this.sprite = sprite;
     }
+
+    
 
     public int getX() {
         return x;
