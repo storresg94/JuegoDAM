@@ -197,6 +197,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
             new Thread(jefe).start();
             new Thread(mediano).start();
             new Thread(zombie).start();
+            new Thread(map).start();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
