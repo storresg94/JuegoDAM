@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  *
  * @author Nexodar
  */
-public class Zombie extends Malo implements Runnable{
+public class Zombie extends Malo implements Runnable, MaloI{
     
     public Zombie(int vida, int resistencia, int danyo, int x, int y, BufferedImage sprite) {
         super(vida, resistencia, danyo, x, y, sprite);
