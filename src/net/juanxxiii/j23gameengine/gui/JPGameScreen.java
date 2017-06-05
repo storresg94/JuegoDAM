@@ -31,6 +31,7 @@ import net.juanxxiii.j23gameengine.util.SoundPlayer;
  */
 public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseListener {
 
+    Graphics2D g2d;
     BufferedImage bg;//Imagen de fondo
     Spaceship nave;//Imagen de fondo
     
@@ -126,7 +127,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseL
 
     @Override
     public void paintComponent(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
+        g2d = (Graphics2D) g;
         g2d.setPaint(Color.WHITE);
         //Pinta la pantalla de blanco
         g2d.fillRect(0, 0, this.getBounds().width, this.getBounds().height);
@@ -207,7 +208,6 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseL
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        Graphics2D g2d = (Graphics2D) g;
         mediano.pintar(g2d);
     }
 

@@ -45,5 +45,10 @@ public class Boss extends Malo implements Runnable, MaloI{
             }
         }
     }
+
+    @Override
+    public void pintar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
        
 }
