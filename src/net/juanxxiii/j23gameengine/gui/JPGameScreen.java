@@ -209,6 +209,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseL
     @Override
     public void mouseClicked(MouseEvent e) {
         mediano.pintar(g2d);
+        
     }
 
     @Override
