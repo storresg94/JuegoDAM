@@ -7,6 +7,7 @@ package net.juanxxiii.j23gameengine.gui;
 
 import gameobjects.Boss;
 import gameobjects.EnemigoMediano;
+import gameobjects.Mapa;
 import gameobjects.Prota;
 import gameobjects.Spaceship;
 import gameobjects.Zombie;
@@ -35,6 +36,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
     Boss jefe;
     EnemigoMediano mediano;
     Prota prota;
+    Mapa map;
     
 
     /**
@@ -75,18 +77,22 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
                 switch (e.getKeyCode()){
                     case 38:
                         //Key up
+                        map.setX(map.getX()+10);
                         prota.moveUp();
                         break;
                     case 40:
                         //Key down
+                        map.setX(map.getX()-10);
                         prota.moveDown();
                         break;
                     case 39:
                         //Key right
+                        map.setY(map.getY()+10);
                         prota.moveRight();
                         break;
                     case 37:
                         //Key left
+                        map.setY(map.getY()-10);
                         prota.moveLeft();
                         break;
                 }
@@ -186,6 +192,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
             bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/CaballeroOscuro.png"));      
             mediano = new EnemigoMediano(50, 50, 50, 50, 50, bg );
             bg = ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/bg.png"));
+            map= new Mapa(30, 200, bg);
             new Thread(prota).start();
             new Thread(jefe).start();
             new Thread(mediano).start();
