@@ -192,7 +192,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable {
             bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/CaballeroOscuro.png"));      
             mediano = new EnemigoMediano(50, 50, 50, 50, 50, bg );
             bg = ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/bg.png"));
-            map= new Mapa(30, 200);
+            map= new Mapa(30, 200, bg);
             new Thread(prota).start();
             new Thread(jefe).start();
             new Thread(mediano).start();
