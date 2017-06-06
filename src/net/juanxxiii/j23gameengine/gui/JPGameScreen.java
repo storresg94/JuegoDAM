@@ -10,6 +10,7 @@ import gameobjects.EnemigoMediano;
 import gameobjects.Mapa;
 import gameobjects.Prota;
 import gameobjects.Spaceship;
+import gameobjects.Sprite;
 import gameobjects.Zombie;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -26,6 +27,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import net.juanxxiii.j23gameengine.GameEngine;
 import net.juanxxiii.j23gameengine.util.SoundPlayer;
+import util.PropertiesManager;
 
 /**
  *
@@ -42,18 +44,24 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseL
     public static String image_name;
     Zombie zombie;
     Boss jefe;
+    Sprite mov;
     EnemigoMediano mediano;
     Prota prota;
     Mapa map;
-    
 
     /**
      * Creates new form JPGameScreen
      */
     public JPGameScreen() {
-      
+
         this.addMouseListener(this);
-        
+        PropertiesManager pm = new PropertiesManager();
+        try {
+            pm.loadProperties();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
         initComponents();
         //Cargamos los recursos
         loadResources();
@@ -64,7 +72,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseL
             @Override
             public void keyTyped(KeyEvent e) {
                 //El keyboard no dispara este evento
-                switch (e.getKeyCode()){
+                switch (e.getKeyCode()) {
                     case 38:
                         //Key up
                         break;
@@ -82,25 +90,25 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseL
 
             @Override
             public void keyPressed(KeyEvent e) {
-                switch (e.getKeyCode()){
+                switch (e.getKeyCode()) {
                     case 38:
                         //Key up
-                        map.setX(map.getX()+10);
+                        map.setX(map.getX() + 10);
                         prota.moveUp();
                         break;
                     case 40:
                         //Key down
-                        map.setX(map.getX()-10);
+                        map.setX(map.getX() - 10);
                         prota.moveDown();
                         break;
                     case 39:
                         //Key right
-                        map.setY(map.getY()+10);
+                        map.setY(map.getY() + 10);
                         prota.moveRight();
                         break;
                     case 37:
                         //Key left
-                        map.setY(map.getY()-10);
+                        map.setY(map.getY() - 10);
                         prota.moveLeft();
                         break;
                 }
@@ -108,7 +116,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseL
 
             @Override
             public void keyReleased(KeyEvent e) {
-                switch (e.getKeyCode()){
+                switch (e.getKeyCode()) {
                     case 38:
                         //Key up
                         prota.stop();
@@ -136,16 +144,30 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseL
         g2d.setPaint(Color.WHITE);
         //Pinta la pantalla de blanco
         g2d.fillRect(0, 0, this.getBounds().width, this.getBounds().height);
-        //Pinta el fondo
+        try {
+            //Pinta el fondo
+            bg = ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/bg.png"));
+        } catch (IOException ex) {
+            Logger.getLogger(JPGameScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
         g2d.drawImage(bg, 0, 0, null);
         //Pinta los elementos
-        jefe.pintar(g2d);
+//        jefe.pintar(g2d);
         //mediano.pintar(g2d);
-        zombie.pintar(g2d);
-        prota.pintar(g2d);
-        if (x==true){
-            mediano.pintar(g2d);
+        //      zombie.pintar(g2d);
+        //     prota.pintar(g2d);
+        try {
+            mov = new Sprite(frames, image_x, image_y, image_name);
+            mov.pintar(g2d);
             
+        } catch (IOException ex) {
+            Logger.getLogger(JPGameScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+       
+        if (x == true) {
+            //   mediano.pintar(g2d);
+
         }
     }
 
@@ -175,7 +197,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseL
     @Override
     public void run() {
         //Asigna el foco si es necesario
-        if (requestFocusInWindow()==false) {
+        if (requestFocusInWindow() == false) {
             setFocusable(true);
         }
         //GAME LOOP - REPINTA A 60FPS
@@ -187,35 +209,38 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseL
                 ex.printStackTrace();
             }
         }
-        
+
     }
-    
+
     /**
      * Carga los recursos del videojuego
      */
-    private void loadResources(){
+    private void loadResources() {
+
         try {
-            bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/doom.gif"));      
-            prota = new Prota(100, 20, 350, 10, bg );
-            bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/MaloMaloso.png"));      
-            jefe = new Boss(100, 100, 100, 100, 100, bg );
-            bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/Zombie.png"));      
-            zombie = new Zombie(10, 0, 80, 300, 300, bg );
-            bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/CaballeroOscuro.png"));      
-            mediano = new EnemigoMediano(50, 50, 50, 50, 50, bg );
+            //            bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/doom.gif"));
+//            prota = new Prota(100, 20, 350, 10, bg );
+//            bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/MaloMaloso.png"));      
+//            jefe = new Boss(100, 100, 100, 100, 100, bg );
+//            bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/Zombie.png"));      
+//            zombie = new Zombie(10, 0, 80, 300, 300, bg );
+//            bg=ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/CaballeroOscuro.png"));      
+//            mediano = new EnemigoMediano(50, 50, 50, 50, 50, bg );
             bg = ImageIO.read(JPGameScreen.class.getResourceAsStream("/assets/bg.png"));
-            map= new Mapa(30, 200, bg);
-            new Thread(prota).start();
-            new Thread(jefe).start();
-            new Thread(mediano).start();
-            new Thread(zombie).start();
-            new Thread(map).start();
         } catch (IOException ex) {
-            ex.printStackTrace();
+            Logger.getLogger(JPGameScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
+        map = new Mapa(30, 200, bg);
+//        new Thread(prota).start();
+//        new Thread(jefe).start();
+//        new Thread(mediano).start();
+//        new Thread(zombie).start();
+        new Thread(map).start();
+
     }
 
     boolean x = false;
+
     @Override
     public void mouseClicked(MouseEvent e) {
         x = true;
