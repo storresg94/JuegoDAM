@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 import net.juanxxiii.j23gameengine.GameEngine;
+import net.juanxxiii.j23gameengine.gui.JPGameScreen;
 
 /**
  *
@@ -35,6 +36,10 @@ public class PropertiesManager {
             GameEngine.screenY = Integer.parseInt(prop.getProperty("screen_y"));
             GameEngine.screenWidth = Integer.parseInt(prop.getProperty("screen_width"));
             GameEngine.screenHeight = Integer.parseInt(prop.getProperty("screen_height"));
+            JPGameScreen.image_x = Integer.parseInt(prop.getProperty("image_x"));
+            JPGameScreen.image_y = Integer.parseInt(prop.getProperty("image_y"));
+            JPGameScreen.frames = Integer.parseInt(prop.getProperty("frames"));
+            JPGameScreen.image_name=prop.getProperty("image_name");
         } catch (IOException e) {
             throw e;
         } finally {

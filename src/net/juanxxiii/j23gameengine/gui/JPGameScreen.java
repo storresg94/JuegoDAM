@@ -36,7 +36,10 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseL
     Graphics2D g2d;
     BufferedImage bg;//Imagen de fondo
     Spaceship nave;//Imagen de fondo
-    
+    public static int frames;
+    public static int image_x;
+    public static int image_y;
+    public static String image_name;
     Zombie zombie;
     Boss jefe;
     EnemigoMediano mediano;
