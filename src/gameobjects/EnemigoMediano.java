@@ -12,7 +12,7 @@ import static java.lang.Thread.sleep;
  *
  * @author MSI
  */
-public class EnemigoMediano extends Malo implements Runnable {
+public class EnemigoMediano extends Malo implements Runnable,MaloI {
     
     public EnemigoMediano(int vida, int resistencia, int danyo, int x, int y, BufferedImage sprite) {
         super(vida, resistencia, danyo, x, y, sprite);
