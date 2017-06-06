@@ -142,6 +142,7 @@ public class JPGameScreen extends javax.swing.JPanel implements Runnable, MouseL
         prota.pintar(g2d);
         if (x==true){
             mediano.pintar(g2d);
+            
         }
     }
 
